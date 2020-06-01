@@ -1,0 +1,221 @@
+@import 'normalize.css';
+
+//===Mixins===
+@mixin font-lato {
+    font-family: 'Lato', sans-serif;
+}
+@mixin montserat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+//=== / Mixins===
+
+
+//===Variables===
+$color-white: #fff;
+//=== / Variables===
+
+
+//===Common===
+* {
+    box-sizing: border-box;
+}
+body {
+    @include font-lato;
+   
+}
+.section-outer {}
+.section-inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+//=== / Common===
+
+//===Header===
+.section-header {
+    color: $color-white;
+    background: url('../img/back.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    position: relative;
+    .section-inner {
+        height: 100vh;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(20, 39, 41, .6);
+        z-index: 5;
+    }
+    &-logo {
+        font-weight: bold;
+        font-size: 24px;
+        flex-shrink: 1;
+        padding-top: 35px;
+    }
+    &-content {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+    &-wraper {
+        &__title {
+            text-align: center;
+            font-size: 56px;
+            line-height: 60px;
+            margin-bottom: 16px;
+        }
+        &__subtitle {
+            @include montserat;
+            text-align: center;
+            font-size: 18px;
+            line-height: 32px;
+            text-align: center;
+            margin:0 auto 44px;
+            width: 50%;
+        }
+        &__form {
+            display: flex;
+            text-align: center;
+            margin: 0 auto;
+            &-input {
+                flex: 1;
+                padding-right: 40px;
+                input {
+                    border: none;
+                    background-color: rgba(255, 255, 255, .25);
+                    color: $color-white;
+                    @include montserat;
+                    font-size: 16px;
+                    padding: 16px 20px;
+                    outline: none;
+                    border-radius: 4px;
+                    width: 100%;
+                    &::placeholder {
+                        color: $color-white;
+                    }
+                }
+            }
+            &-button {
+                button {
+                    font-size: 18px;
+                    border: none;
+                    background: linear-gradient(to right, #FE985B, #FE4FA7);
+                    padding: 16px 20px;
+                    outline: none;
+                    border-radius: 4px;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+//=== / Header===
+
+
+//=== Promo===
+.section-promo {
+    margin: 120px 0;
+}
+
+.section-promo-1 {
+    display: flex;
+    padding-bottom: 122px;
+    border-bottom: 1px solid #E2E2E2;
+    &__content {
+        flex-basis: 50%;
+        padding-right: 90px;
+        &-title {
+            font-size: 36px;
+            line-height: 51px;
+            font-weight: bold;
+            margin-bottom: 56px;
+        }
+        &-subtitle {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 14px;
+            margin-top: 30px;
+        }
+        &-text {
+            font-size: 16px;
+            font-weight: 26px;
+        }
+    }
+
+    &__video {
+        flex-basis: 50%;
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    
+}
+
+.section-promo-2 {
+    display: flex;
+    margin-top: 86px;
+
+    &__content {
+
+        &-icon {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        &-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+        &-text {
+            text-align: center;
+        }
+    }
+}
+//=== Promo===
+
+//===Founder===
+.section-founder {
+    &-inner {
+       
+        margin-top: 132px;
+        background-color: #F6FAFD;
+       
+        display: flex;
+    }
+   
+        &__foto {
+            align-self: flex-end;
+        }
+        &__content {
+         margin-left: 53px;
+         align-self: center;
+         @include montserat;
+         &-description {
+             padding-bottom: 50px;
+             font-size: 24px;
+             line-height: 40px;
+         }
+         &-name {
+             font-weight: bold;
+         }
+         &-position {
+             font-size: 20px;
+         }
+           }
+   
+}
+//===/ Founder===
